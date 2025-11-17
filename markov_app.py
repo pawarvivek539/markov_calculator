@@ -165,12 +165,13 @@ def main():
 
         plt.tight_layout()
         st.pyplot(fig)
-    # --- show historical context at the end ---
-    st.markdown("---")
-    if st.checkbox("📜 Show Historical Background (Markov’s Original Experiment)"):
-        show_background()
+# --- show historical context at the end ---
+st.markdown("---")
 
-    st.markdown(
+if st.button("📜 Show Historical Background (Markov’s Original Experiment)"):
+    show_background()
+
+st.markdown(
     """
     <style>
     @keyframes rainbow {
@@ -192,8 +193,4 @@ def main():
     </div>
     """,
     unsafe_allow_html=True
-    )
-       
-
-if __name__ == "__main__":
-    main()
+)
